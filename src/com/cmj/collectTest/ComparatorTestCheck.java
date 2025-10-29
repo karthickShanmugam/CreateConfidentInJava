@@ -1,4 +1,4 @@
-package com.cmj;
+package com.cmj.collectTest;
 
 import java.util.*;
 import java.util.function.Consumer;
