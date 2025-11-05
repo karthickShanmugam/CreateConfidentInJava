@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.function.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class StreamTest {
@@ -15,8 +16,21 @@ class StreamTest {
         //usingStream1();
         //usingStream2();
         //predicateTest();
-        supplierAndConsumer();
+        //supplierAndConsumer();
+        unaryOperatorExample();
     }
+    public static void unaryOperatorExample(){
+
+        List<Integer> num = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+
+        Function<Integer, Integer> obj = a->a*10;
+        UnaryOperator<Integer> obj1 = b->b+1;
+        List<Integer> result = num.stream().map(obj.andThen(obj1)).collect(Collectors.toList());
+
+        result.forEach(System.out::println);
+    }
+
+
     public static void supplierAndConsumer(){
 
         Supplier<String> r = ()->{
