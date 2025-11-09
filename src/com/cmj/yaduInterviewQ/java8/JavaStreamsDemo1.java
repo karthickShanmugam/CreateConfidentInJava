@@ -18,9 +18,26 @@ public class JavaStreamsDemo1 {
          //readFromConsoleAndCreateList();
          //fileWriteAndRead();
         // Need to work on file upload
+        biggestAmongThreeNumber();
 
 
     }
+
+    public static void biggestAmongThreeNumber() throws IOException {
+        InputStreamReader obj = new InputStreamReader(System.in);
+        BufferedReader obj1 = new BufferedReader(obj);
+        System.out.println("Please enter the 3 number to find max of it");
+        Integer maxNum = IntStream.range(0, 3).mapToObj(index -> {
+            try {
+                return Integer.valueOf(obj1.readLine());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }).toList().stream().sorted(Collections.reverseOrder()).toList().get(0);
+        System.out.println("Max Number is: "+maxNum);
+    }
+
+    //TCS
     public static void fileWriteAndRead() throws IOException {
         BufferedWriter obj = new BufferedWriter(new FileWriter("test.txt"));
         obj.write("Hello world");
@@ -55,6 +72,7 @@ public class JavaStreamsDemo1 {
         finalResult.forEach(System.out::println);
     }
 
+    //UST
     public static void mergeTwoArraySortASC(){
         //In java 8 Desc
         int[] a = {4,1,7,5};
@@ -76,6 +94,7 @@ public class JavaStreamsDemo1 {
         Arrays.stream(cc).forEach(System.out::print);
     }
 
+    //Oracle company
     public static void findTheDuplicateCountInList(){
         //In java 8
         List<String> fruitsList = Arrays.asList("Apple", "Orange", "Grape", "Pomegranate", "Apple", "Grape", "Grape");

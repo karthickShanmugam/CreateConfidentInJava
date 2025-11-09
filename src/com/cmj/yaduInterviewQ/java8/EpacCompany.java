@@ -37,10 +37,6 @@ public class EpacCompany {
       System.out.println(max);
       System.out.println(Key);
 
-
-        users.stream().map(dd->dd.subscriptionId).map(d->d)
-
-
     }
 }
 

@@ -13,8 +13,7 @@ import java.util.stream.IntStream;
 public class InputAndOutputStream {
 
     public static void main(String[] a) throws IOException {
-
-        System.out.println("Hello");
+        System.out.println("Enter Row and Column for creating Integer Array");
 
         InputStreamReader obj = new InputStreamReader(System.in);
         BufferedReader obj1 = new BufferedReader(obj);
@@ -29,16 +28,14 @@ public class InputAndOutputStream {
         }).map(String::trim).map(Integer::parseInt).collect(Collectors.toList());
 
         finalResult.stream().forEach(System.out::println);
-        System.out.println("String revers");
+        System.out.println("##########String revers############");
         String name = "Karthick Shanmugam";
         System.out.println(name.length());
         String dday = IntStream.range(0, name.length()).map(c -> {System.out.println(c); return name.charAt(name.length() -1 - c);})
                         .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
         System.out.println("String revers print dday: "+dday);
 
-      List<String> dataStringList = Arrays.asList("apple", "orange", "grape", "apple");
+        List<String> dataStringList = Arrays.asList("apple", "orange", "grape", "apple");
         Map<String, Long> dat = dataStringList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-
-
     }
 }
