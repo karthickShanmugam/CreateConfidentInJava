@@ -88,7 +88,7 @@ public class java8Test {
         List<Integer> numbers = Arrays.asList(121, 23, 11, 454, 67, 101, 22, 900);
 
         var  listPalindrom = numbers.stream()
-                .collect(Collectors.partitioningBy(n->n.toString().equals( new StringBuilder(n.toString()).reverse().toString()      )));
+                .collect(Collectors.partitioningBy(n->n.toString().equals( new StringBuilder(n.toString()).reverse().toString())));
         System.out.println("Palindrom"+listPalindrom);
 
         // from list find start with 1
