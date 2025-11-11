@@ -112,6 +112,10 @@ public class java8Test {
         System.out.println("o/p"+outPut);
 
 
+        /// average
+        var averageL = numbers.stream().mapToInt(n->n).average();
+        System.out.println("average : "+averageL);
+
 
 
 

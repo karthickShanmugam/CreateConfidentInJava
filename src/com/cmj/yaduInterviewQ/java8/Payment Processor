@@ -1,0 +1,42 @@
+
+
+// PaymentProcessor should be able triger notification after complete
+// client should be blocked
+
+
+Public class PaymentProcessor{
+
+private final ExcutorService excute =
+                         Excutor.newFixedThreadpool(5);
+
+
+public void process( PaymentReq req){
+
+
+// this is a time taking operation . While doing this client should not be blocked
+// when operation is complete client should be notified with success[ref no , timestamp,  ] or failure  [errorcode , errod message , enquiryNumber] details
+
+
+
+}
+
+}
+
+
+Class Client {
+
+
+
+public static void main(String[] args) {
+
+
+ - > call payment service to process paylment
+ - > Service should be able to receive success/failure response without being blocked
+
+}
+
+}
+
+
+
+
