@@ -5,6 +5,7 @@ import com.cmj.yaduInterviewQ.java8.Employee;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class java8Test {
 
@@ -102,7 +103,13 @@ public class java8Test {
         System.out.println("even  and Odd num in list : "+evenAndOddNums);
 
 
+        // i/p1,0,7,0,2,0,5,0,9,0  o/p ==[1,7,2,5,0,0,0,0]
+        List<Integer> myListOrder = Arrays.asList(1,0,7,0,2,0,5,0,9,0);
 
+        var outPut= Stream.concat( myListOrder.stream().filter(n->n!=0) ,
+                myListOrder.stream().filter(n->n==0)).collect(Collectors.toList());
+
+        System.out.println("o/p"+outPut);
 
 
 
