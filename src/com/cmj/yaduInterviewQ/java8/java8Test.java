@@ -117,6 +117,22 @@ public class java8Test {
         System.out.println("average : "+averageL);
 
 
+        //java8  print 2 end highest char in string
+        String ip = "oh my god in love my india";
+        String inp1= ip.replaceAll("\\s","").toString();
+        var op= inp1.chars().mapToObj(c->(char)c).
+                collect(Collectors.
+                        groupingBy(ch->ch,Collectors.counting()))
+                .entrySet().stream().
+                sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).skip(1).findFirst();
+        System.out.println(op);
+
+        // print 2nd largest number from list
+
+        List<Integer> numList2ndLargest = Arrays.asList(2, 4, 6, 8, 1, 3, 5, 7);
+        var numList2ndLargest1 = numList2ndLargest.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst();
+
+        System.out.println("numList2ndLargest"+numList2ndLargest1);
 
 
 
