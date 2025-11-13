@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class java8Test {
 
     public static void main(String args[]) {
-        List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
+            List<Integer> myList = Arrays.asList(10, 15, 8, 49, 25, 98, 98, 32, 15);
         String strInput = "heel and Feel";
         String[] stringarry =strInput.split(" ");
         // print even
