@@ -134,6 +134,15 @@ public class java8Test {
 
         System.out.println("numList2ndLargest"+numList2ndLargest1);
 
+        //java8  1 larger number occurecnce  [AA=3]
+        List<String> myListAA = Arrays.asList("AA", "BB", "AA", "CC","AA","BB");
+
+        var op1=myListAA.stream().
+                collect(Collectors.
+                        groupingBy(Function.identity(),Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue());
+        System.out.println("op String "+op1);
+
 
 
     }
