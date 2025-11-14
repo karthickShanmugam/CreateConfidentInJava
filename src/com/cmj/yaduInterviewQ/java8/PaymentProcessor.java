@@ -40,7 +40,7 @@ public class PaymentProcessor {
         CompletableFuture.supplyAsync(() ->
                         doPayment(paymentId, req), excute).
                 thenAccept(res -> {
-                    notification.sendNotification();
+                    System.out.println(notification.sendNotification());
                 });
         return paymentId;
 
