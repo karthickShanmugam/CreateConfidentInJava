@@ -143,7 +143,13 @@ public class java8Test {
                 .entrySet().stream().max(Map.Entry.comparingByValue());
         System.out.println("op String "+op1);
 
+        ///  list of emp salary greater than aveage salary
 
+        var empAverage =employeeList.stream().mapToDouble(Employee::getSalary).average();
+        System.out.println("Avg Salary "+empAverage);
+        var emplistGreaterThanAvg = employeeList.stream().filter(employee -> employee.getSalary()>empAverage.getAsDouble()).collect(Collectors.toList());
+
+        System.out.println("List of Employee With greater than avg "+emplistGreaterThanAvg);
 
     }
 }
